@@ -91,13 +91,11 @@ services:
     volumes:
       - ./config/letsencrypt:/config
     environment:
-      - EMAIL=you+letsencrypt@yourapp.com
-      - URL=yourapp.com
-      - SUBDOMAINS=www,api
+      - EMAIL=admin@owwo.io
+      - URL=voice1.owwo.io
+      - SUBDOMAINS=voice1
       - VALIDATION=http
       - TZ=America/Chicago
-      - PUID=0
-      - PGID=0
     networks:
       - ionnet
 
