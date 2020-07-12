@@ -19,8 +19,7 @@ RUN apk --no-cache add ca-certificates
 COPY --from=0 /biz /usr/local/bin/biz
 
 COPY configs/docker/biz.toml /configs/biz.toml
-ADD config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/cert.pem /configs/letsencrypt/keys/letsencrypt/cert.pem
-ADD config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/key.pem /configs/letsencrypt/keys/letsencrypt/key.pem
+ADD config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io /configs/letsencrypt/keys/letsencrypt
 
 ENTRYPOINT ["/usr/local/bin/biz"]
 CMD ["-c", "/configs/biz.toml"]
