@@ -92,7 +92,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 8443:8443
     volumes:
       - ./config/letsencrypt:/config
     environment:
