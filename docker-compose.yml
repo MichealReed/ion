@@ -89,7 +89,7 @@ services:
 
   ion-letsencrypt:
     image: linuxserver/letsencrypt
-    command: -v `pwd`/config/le-ssl/
+    command: -v /config/le-ssl/
     container_name: ion-letsencrypt
     ports:
       - 80:80
