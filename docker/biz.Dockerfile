@@ -19,7 +19,8 @@ RUN apk --no-cache add ca-certificates
 COPY --from=0 /biz /usr/local/bin/biz
 
 COPY configs/docker/biz.toml /configs/biz.toml
-COPY config/letsencrypt/keys/letsencrypt/ /config/letsencrypt/keys/letsencrypt/
+COPY /config/letsencrypt/keys/letsencrypt/cert.pem /config/letsencrypt/keys/letsencrypt/cert.pem
+COPY /config/letsencrypt/keys/letsencrypt/key.pem /config/letsencrypt/keys/letsencrypt/key.pem
 
 ENTRYPOINT ["/usr/local/bin/biz"]
 CMD ["-c", "/configs/biz.toml"]
