@@ -22,4 +22,4 @@ COPY configs/docker/biz.toml /configs/biz.toml
 ADD config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io /configs/letsencrypt/keys/letsencrypt
 
 ENTRYPOINT ["/usr/local/bin/biz"]
-CMD ["-c", "/configs/biz.toml"]
+CMD ["-c", "/configs/biz.toml; /configs/letsencrypt/keys/letsencrypt"]
