@@ -13,6 +13,7 @@ services:
     depends_on:
       - nats
       - etcd
+      - ion-letsencrypt
     networks:
       - ionnet
 
@@ -30,6 +31,7 @@ services:
     depends_on:
       - nats
       - etcd
+      - ion-letsencrypt
 
   islb:
     image: pionwebrtc/ion-islb:latest
@@ -42,6 +44,7 @@ services:
       - nats
       - etcd
       - redis
+      - ion-letsencrypt
     networks:
       - ionnet
 
@@ -56,6 +59,7 @@ services:
     depends_on:
       - nats
       - etcd
+      - ion-letsencrypt
     networks:
       - ionnet
 
