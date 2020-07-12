@@ -24,8 +24,8 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./config/letsencrypt/keys/letsencrypt/cert.pem:/config/letsencrypt/keys/letsencrypt/cert.pem"
-      - "./config/letsencrypt/keys/letsencrypt/key.pem:/config/letsencrypt/keys/letsencrypt/key.pem"
+      - "./config/letsencrypt/keys/letsencrypt/cert.pem:/configs/letsencrypt/keys/letsencrypt/cert.pem"
+      - "./config/letsencrypt/keys/letsencrypt/key.pem:/configs/letsencrypt/keys/letsencrypt/key.pem"
     ports:
       - 8443:8443
     networks:
