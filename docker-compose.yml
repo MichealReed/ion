@@ -24,7 +24,7 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./:/out/"
+      - "./config/letsencrypt/keys/letsencrypt/:config/letsencrypt/keys/letsencrypt/"
     ports:
       - 8443:8443
     networks:
@@ -89,7 +89,7 @@ services:
 
   ion-letsencrypt:
     image: linuxserver/letsencrypt
-    command: -v ./out/config/letsencrypt/:/out/config/letsencrypt/
+    command: -v ./config/letsencrypt/:/config/letsencrypt/
     container_name: ion-letsencrypt
     ports:
       - 80:80
