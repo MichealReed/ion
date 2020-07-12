@@ -92,8 +92,7 @@ services:
       - ./config/letsencrypt:/config
     environment:
       - EMAIL=admin@owwo.io
-      - URL=owwo.io
-      - SUBDOMAINS=voice1
+      - URL=voice1.owwo.io
       - VALIDATION=http
       - TZ=America/Chicago
     networks:
