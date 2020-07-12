@@ -19,8 +19,8 @@ addrs = ["etcd:2379"]
 #listen ip port
 host = "0.0.0.0"
 port = "8443"
-# cert= "/configs/certs/cert.pem"
-# key= "/configs/certs/key.pem"
+# cert= "/config/letsencrypt/keys/letsencrypt/cert.pem"
+# key= "/config/letsencrypt/keys/letsencrypt/key.pem"
 
 [nats]
 url = "nats://nats:4222"
