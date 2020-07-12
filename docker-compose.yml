@@ -24,6 +24,8 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
+      - "./config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/cert.pem:/configs/letsencrypt/keys/letsencrypt/cert.pem"
+      - "./config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/key.pem:/configs/letsencrypt/keys/letsencrypt/key.pem"
     ports:
       - 8443:8443
     networks:
