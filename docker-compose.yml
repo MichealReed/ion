@@ -1,6 +1,24 @@
 version: "3.7"
 
 services:
+  ion-letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: ion-letsencrypt
+    command: -v ./config/letsencrypt:/le-ssl
+    ports:
+      - 80:8080
+      - 443:8443
+    volumes:
+      - ./config/letsencrypt:/config
+      - ./:/out/
+    environment:
+      - EMAIL=admin@owwo.io
+      - URL=voice1.owwo.io
+      - VALIDATION=http
+      - TZ=America/Chicago
+    networks:
+      - ionnet
+
   sfu:
     image: pionwebrtc/ion-sfu:latest
     build:
@@ -85,24 +103,6 @@ services:
     image: redis:5.0.9
     ports:
       - 6380:6379
-    networks:
-      - ionnet
-
-  ion-letsencrypt:
-    image: linuxserver/letsencrypt
-    container_name: ion-letsencrypt
-    command: -v config/letsencrypt:/le-ssl
-    ports:
-      - 80:8080
-      - 443:8443
-    volumes:
-      - ./config/letsencrypt:/config
-      - ./:/out/
-    environment:
-      - EMAIL=admin@owwo.io
-      - URL=voice1.owwo.io
-      - VALIDATION=http
-      - TZ=America/Chicago
     networks:
       - ionnet
 
