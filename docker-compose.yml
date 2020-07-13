@@ -92,8 +92,8 @@ services:
     command: -v ./config/letsencrypt/:/config/letsencrypt/
     container_name: ion-letsencrypt
     ports:
-      - 80:80
-      - 443:443
+      - 80:8080
+      - 443:8443
     volumes:
       - ./config/letsencrypt:/config
       - ./:/out/
