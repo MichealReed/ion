@@ -41,7 +41,7 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./le-ssl/live/voice1.owwo.io"
+      - "./le-ssl"
 
     ports:
       - 8443:8443
