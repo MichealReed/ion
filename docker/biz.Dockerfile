@@ -19,6 +19,7 @@ RUN apk --no-cache add ca-certificates
 COPY --from=0 /biz /usr/local/bin/biz
 
 COPY configs/docker/biz.toml /configs/biz.toml
+COPY config config
 
 ENTRYPOINT ["/usr/local/bin/biz"]
 CMD ["-c", "/configs/biz.toml"]

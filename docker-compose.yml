@@ -40,6 +40,7 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
+      - "./config:/config"
     ports:
       - 8443:8443
     networks:
