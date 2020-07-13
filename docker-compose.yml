@@ -24,8 +24,9 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
+      - "./config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/*:/configs/letsencrypt/keys/letsencrypt:ro"
     ports:
-      - 8443:443
+      - 8443:8443
     networks:
       - ionnet
     depends_on:
@@ -91,7 +92,7 @@ services:
     container_name: ion-letsencrypt
     ports:
       - 80:8080
-      - 8443:443
+      - 443:8443
     volumes:
       - ./config/letsencrypt:/config
       - ./:/out/
