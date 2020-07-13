@@ -24,9 +24,8 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./config/letsencrypt/etc/letsencrypt/live/voice1.owwo.io/*:/configs/letsencrypt/keys/letsencrypt/"
     ports:
-      - 8443:8443
+      - 443:8443
     networks:
       - ionnet
     depends_on:
