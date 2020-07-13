@@ -25,7 +25,6 @@ services:
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
       - "./le-ssl/etc/letsencrypt/live/voice1.owwo.io:/configs/letsencrypt/keys/letsencrypt"
-      - "./le-ssl/etc/letsencrypt/live/voice1.owwo.io:/configs/letsencrypt/keys/letsencrypt"
 
     ports:
       - 8443:8443
