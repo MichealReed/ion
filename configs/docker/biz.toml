@@ -19,8 +19,8 @@ addrs = ["etcd:2379"]
 #listen ip port
 host = "0.0.0.0"
 port = "8443"
-cert = "configs/letsencrypt/keys/letsencrypt/cert.pem"
-key = "configs/letsencrypt/keys/letsencrypt/key.pem"
+cert = "le-ssl/live/voice1.owwo.io/cert.pem"
+key = "le-ssl/live/voice1.owwo.io/key.pem"
 
 [nats]
 url = "nats://nats:4222"
