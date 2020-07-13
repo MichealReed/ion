@@ -4,12 +4,13 @@ services:
   ion-letsencrypt:
     image: linuxserver/letsencrypt
     container_name: ion-letsencrypt
-    command: -v ./config/letsencrypt:./le-ssl
+    command: -v /config/letsencrypt/:le-ssl
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./config/letsencrypt:/config
+      - ./config/letsencrypt/:/config
+      - ./le-ssl
     environment:
       - EMAIL=admin@owwo.io
       - URL=voice1.owwo.io
