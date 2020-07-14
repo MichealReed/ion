@@ -87,7 +87,8 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./:/out/"
+      - ${NGINX_FILES_PATH:-./data}/certs/default.key:/configs/certs/default.key
+      - ${NGINX_FILES_PATH:-./data}/certs/default.crt:/configs/certs/default.crt
     ports:
       - 8443:8443
     networks:
@@ -104,8 +105,6 @@ services:
       context: .
     volumes:
       - "./configs/docker/islb.toml:/configs/islb.toml"
-      - ${NGINX_FILES_PATH:-./data}/certs/default.key:/configs/certs/default.key
-      - ${NGINX_FILES_PATH:-./data}/certs/default.crt:/configs/certs/default.crt
 
     depends_on:
       - nats

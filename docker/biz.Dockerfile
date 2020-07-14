@@ -15,11 +15,12 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /biz .
 
 FROM alpine:3.12.0
 
+COPY nginx-data/certs/default.crt /configs/certs/default.crt
+COPY nginx-data/certs/default.key /configs/certs/default.key
 RUN apk --no-cache add ca-certificates
 COPY --from=0 /biz /usr/local/bin/biz
 
 COPY configs/docker/biz.toml /configs/biz.toml
-COPY config/* config/*
 
 ENTRYPOINT ["/usr/local/bin/biz"]
 CMD ["-c", "/configs/biz.toml"]
