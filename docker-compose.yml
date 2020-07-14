@@ -80,8 +80,11 @@ services:
 
   biz:
     image: pionwebrtc/ion-biz:latest
-    environment: 
+    environment:
       VIRTUAL_PORT: 8443
+      VIRTUAL_HOST: voice1.owwo.io
+      LETSENCRYPT_HOST: voice1.owwo.io
+      LETSENCRYPT_EMAIL: admin@owwo.io
     build:
       dockerfile: ./docker/biz.Dockerfile
       context: .
