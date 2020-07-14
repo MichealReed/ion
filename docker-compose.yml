@@ -104,7 +104,6 @@ services:
       context: .
     volumes:
       - "./configs/docker/islb.toml:/configs/islb.toml"
-      - ${NGINX_FILES_PATH:-./data}/certs:/etc/nginx/certs:rw
 
     depends_on:
       - nats
