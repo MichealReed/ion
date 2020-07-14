@@ -8,7 +8,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./config/letsencrypt/:/config
+      - ./config/letsencrypt:/config
     environment:
       - EMAIL=admin@owwo.io
       - URL=voice1.owwo.io
@@ -40,7 +40,7 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - "./config:/config"
+      - "./:/out/"
     ports:
       - 8443:8443
     networks:
