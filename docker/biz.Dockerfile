@@ -15,8 +15,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /biz .
 
 FROM alpine:3.12.0
 
-COPY nginx-data/certs/default.crt /configs/certs/default.crt
-COPY nginx-data/certs/default.key /configs/certs/default.key
+COPY nginx-data/certs/voice1.owwo.io/key.pem /configs/certs/key.pem
+COPY nginx-data/certs/voice1.owwo.io/cert.pem /configs/certs/cert.pem
 RUN apk --no-cache add ca-certificates
 COPY --from=0 /biz /usr/local/bin/biz
 
