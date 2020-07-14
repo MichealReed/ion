@@ -94,8 +94,8 @@ services:
       context: .
     volumes:
       - "./configs/docker/biz.toml:/configs/biz.toml"
-      - ${NGINX_FILES_PATH:-./data}/certs/voice1.owwo.io/key.pem:/configs/certs/key.pem
-      - ${NGINX_FILES_PATH:-./data}/certs/voice1.owwo.io/cert.pem:/configs/certs/cert.pem
+      - ${NGINX_FILES_PATH:-./data}/certs/default.key:/configs/certs/default.key
+      - ${NGINX_FILES_PATH:-./data}/certs/default.cert:/configs/certs/default.cert
     ports:
       - 8443:8443
     networks:
