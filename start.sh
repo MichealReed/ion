@@ -23,7 +23,7 @@ if [ ! -z ${SERVICE_NETWORK+X} ]; then
 fi
 
 # 4. Download the latest version of nginx.tmpl
-curl https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl > nginx.tmpl
+#curl https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl > nginx.tmpl
 
 # 5. Update local images
 docker-compose pull
